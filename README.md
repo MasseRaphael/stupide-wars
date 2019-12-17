@@ -1,5 +1,5 @@
 # stupide-wars
-projet etudiant de création d'application adapté du jeu stupide vautour avec l'univer star wars
+projet etudiant de création d'application adapté du jeu stupide vautour avec l'univer star wars version react js
  fait en groupe avec Rachid Barr
 
  lien wireframe : https://xd.adobe.com/view/a1e017e6-1568-4704-60ce-89f37d5a1a36-d7d1/
