@@ -11,6 +11,7 @@ export default class PointsCard extends React.Component {
             <div className="PointsCard">
                 <p>+10</p>
                 <p>+10</p>
+                <img src="./public/image/exempleCartePoint.png"></img>
                 <p>+10</p>
                 <p>+10</p>
             </div>

@@ -1,28 +1,32 @@
 import React from 'react';
 import './App.css';
-import PointsCard from './Components/PointsCard';
-import Hand from './Components/Hand';
-import NextButton from './Components/NextButton';
-import ButtonsBottom from './Components/ButtonsBottom';
+import PointsCard from './Components/PointCard/PointsCard';
+import Hand from './Components/Hand/Hand';
+import NextButton from './Components/NextButton/NextButton';
+import ButtonsBottom from './Components/ButtonsBottom/ButtonsBottom';
 
 function App() {
   return (
     <div className="App">
+
+      <div className="layout">
       
-      <header>
+        <header>
 
-        <h1>Stupide<br/>
-          Wars</h1>
+          <h1>Stupide<br/>
+            Wars</h1>
 
-      </header>
+        </header>
 
-      <div><PointsCard/></div>
+        <div><PointsCard/></div>
 
-      <Hand/>
+        <Hand/>
 
-      <div><NextButton/></div>
+        <div><NextButton/></div>
 
-      <ButtonsBottom/>
+        <ButtonsBottom/>
+
+      </div>
 
     </div>
   );

@@ -13,9 +13,14 @@ h1{
 }
 
 .App {
-  text-align: center;
+  background: #000;
+}
+
+.layout{
   min-width: 0px;
   max-width: 400px;
+  text-align: center;
   margin: 0 auto;
+  /*background-image: url("../public/images/star-wars-stars-background-3.jpg");*/
 }
 
