@@ -6,6 +6,12 @@ header{
   padding: 10px;
 }
 
+h1{
+  margin: 0 auto;
+  font-family: 'SF Distant Galaxy Outline';
+  color: #F5D715;
+}
+
 .App {
   text-align: center;
   min-width: 0px;
