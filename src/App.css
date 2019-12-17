@@ -1,22 +1,15 @@
+header{
+  background: #000;
+  border-bottom: #F5D715 2px solid;
+  border-left: #F5D715 2px solid;
+  border-right: #F5D715 2px solid;
+  padding: 10px;
+}
+
 .App {
   text-align: center;
+  min-width: 0px;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #09d3ac;
-}
