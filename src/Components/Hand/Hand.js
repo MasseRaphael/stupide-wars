@@ -1,5 +1,6 @@
 import React from 'react';
-import './Hand.css'
+import './Hand.css';
+import Card from './Card/Card';
 
 export default class Hand extends React.Component {
     constructor(){
@@ -8,8 +9,22 @@ export default class Hand extends React.Component {
 
     render(){
         return(
-            <div className="">
-                <p>Bonjour</p>
+            <div className="Hand">
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
             </div>
         )
     }

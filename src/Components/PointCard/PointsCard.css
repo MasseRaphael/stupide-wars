@@ -1,15 +1,18 @@
 img{
     position: absolute;
-    top: 0px;
+    top: 5px;
     left: 0px;
 }
 
 .PointsCard{
     background: #000;
-    height: 250px;
+    height: 260px;
     width: 175px;
     position: relative;
     padding: 0;
+    border: solid 2px #10d7ee;
+    margin: 50px auto;
+    color: #10d7ee;
 }
 
 .upLeft{

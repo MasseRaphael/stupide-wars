@@ -1,0 +1,12 @@
+.Card{
+    background: #16ad06;
+    position: relative;
+    color: #fff;
+    height: 188px;
+    width: 132px;
+}
+
+.Nom{
+    font-size: 14px;
+}
+    
