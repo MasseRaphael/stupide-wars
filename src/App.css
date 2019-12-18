@@ -21,6 +21,7 @@ h1{
   max-width: 400px;
   text-align: center;
   margin: 0 auto;
+  height: 100vh;
   /*background-image: url("../public/images/star-wars-stars-background-3.jpg");*/
 }
 
