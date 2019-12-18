@@ -1,5 +1,6 @@
 import React from 'react';
-import './PointsCard.css'
+import './PointsCard.css';
+import cartePoint from './exempleCartePoint.png';
 
 export default class PointsCard extends React.Component {
     constructor(){
@@ -11,7 +12,7 @@ export default class PointsCard extends React.Component {
             <div className="PointsCard">
                 <p>+10</p>
                 <p>+10</p>
-                <img src="./public/image/exempleCartePoint.png"></img>
+                <img src={cartePoint}></img>
                 <p>+10</p>
                 <p>+10</p>
             </div>
