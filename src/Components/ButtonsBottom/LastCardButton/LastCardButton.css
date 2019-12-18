@@ -1,7 +1,12 @@
+.LastCardButton{
+    width: 50%;
+}
+
 .LastCardButton button{
-    background: #000;
-    border: solid 3px #F5D715;
-    font-size: 20px;
     color: #F5D715;
-    padding: 10px;
+    background: #000;
+    border: #F5D715 2px solid;
+    width: 100%;
+    font-size: 15px;
+    height: 45px;
 }

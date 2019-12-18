@@ -1,0 +1,7 @@
+.BottomButton{
+    display: flex;
+    position: absolute;
+    bottom: 0px;
+    max-width: 400px;
+    width: 100%;
+}
