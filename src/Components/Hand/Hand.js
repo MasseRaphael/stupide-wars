@@ -8,7 +8,7 @@ export default class Hand extends React.Component {
 
     render(){
         return(
-            <div className="PointsCard">
+            <div className="">
                 <p>Bonjour</p>
             </div>
         )

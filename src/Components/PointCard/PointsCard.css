@@ -1,5 +1,37 @@
+img{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
 .PointsCard{
     background: #000;
+    height: 250px;
+    width: 175px;
     position: relative;
-    height: ;
+    padding: 0;
+}
+
+.upLeft{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.upRight{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.botLeft{
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+}
+
+.botRight{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
 }
