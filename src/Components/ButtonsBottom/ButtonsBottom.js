@@ -1,5 +1,7 @@
 import React from 'react';
-import './ButtonsBottom.css'
+import './ButtonsBottom.css';
+import LastCardButton from "./LastCardButton/LastCardButton";
+import ScoreButton from "./ScoreButton/ScoreButton";
 
 export default class ButtonsBottom extends React.Component {
     constructor(){
@@ -9,7 +11,8 @@ export default class ButtonsBottom extends React.Component {
     render(){
         return(
             <div className="">
-                <p>Bonjour</p>
+                <LastCardButton/>
+                <ScoreButton/>
             </div>
         )
     }

@@ -1,0 +1,7 @@
+.ScoreButton button{
+    background: #000;
+    border: solid 3px #F5D715;
+    font-size: 20px;
+    color: #F5D715;
+    padding: 10px;
+}
