@@ -8,8 +8,8 @@ export default class NextButton extends React.Component {
 
     render(){
         return(
-            <div className="">
-                <p>Bonjour</p>
+            <div className="NextButton">
+                <button>Joueur<br/>Suivant</button>
             </div>
         )
     }

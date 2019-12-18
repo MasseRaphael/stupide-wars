@@ -18,11 +18,11 @@ function App() {
 
         </header>
 
-        <div><PointsCard/></div>
+        <PointsCard/>
 
         <Hand/>
 
-        <div><NextButton/></div>
+        <NextButton/>
 
         <ButtonsBottom/>
 
