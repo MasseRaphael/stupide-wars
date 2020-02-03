@@ -5,31 +5,44 @@ import Hand from './Components/Hand/Hand';
 import NextButton from './Components/NextButton/NextButton';
 import ButtonsBottom from './Components/ButtonsBottom/ButtonsBottom';
 
-function App() {
-  return (
-    <div className="App">
+export default class App extends React.Component {
+  constructor(){
+    super();
 
-      <div className="layout">
-      
-        <header>
+    this.state = {
+      tabCarteJoueur: [1],
+    }
+  }
 
-          <h1>Stupide<br/>
-            Wars</h1>
-
-        </header>
-
-        <PointsCard/>
-
-        <Hand/>
-
-        <NextButton/>
-
-        <ButtonsBottom/>
-
+  startGame = () => {
+    // Remplir tabCarteJoueur
+  }
+  render(){
+    return (
+      <div className="App">
+  
+        <div className="layout">
+        
+          <header>
+  
+            <h1>Stupide<br/>
+              Wars</h1>
+  
+          </header>
+  
+          <PointsCard/>
+  
+          <Hand/>
+  
+          <NextButton tabCarteJoueur={this.state.tabCarteJoueur}/>
+  
+          <ButtonsBottom/>
+  
+        </div>
+  
       </div>
-
-    </div>
-  );
+    );  
+  }
+  
 }
 
-export default App;

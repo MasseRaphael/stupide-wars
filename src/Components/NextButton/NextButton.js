@@ -7,10 +7,20 @@ export default class NextButton extends React.Component {
     }
 
     render(){
-        return(
-            <div className="NextButton">
-                <button>Joueur<br/>Suivant</button>
-            </div>
-        )
+        let tabCarte = this.props.tabCarteJoueur;
+        if(tabCarte.length === 0) {
+            return(
+                <div className="NextButton">
+                    <button>Commencer partie</button>
+                </div>
+            )
+        } else {
+            return(
+                <div className="NextButton">
+                    <button>Joueur<br/>Suivant</button>
+                </div>
+            )
+        }
+
     }
 }
