@@ -1,7 +1,7 @@
 img{
     position: absolute;
-    top: 5px;
-    left: 0px;
+    top: 0;
+    left: 0;
     width: 100%;
 }
 
@@ -18,24 +18,24 @@ img{
 
 .upLeft{
     position: absolute;
-    top: 5px;
-    left: 5px;
+    top: 0.5vh;
+    left: 0.5vh;
 }
 
 .upRight{
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 0.5vh;
+    right: 0.5vh;
 }
 
 .botLeft{
     position: absolute;
-    bottom: 3px;
-    left: 5px;
+    bottom: 0.3vh;
+    left: 0.5vh;
 }
 
 .botRight{
     position: absolute;
-    bottom: 3px;
-    right: 5px;
+    bottom: 0.3vh;
+    right: 0.5vh;
 }

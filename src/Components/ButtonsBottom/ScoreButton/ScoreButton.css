@@ -1,13 +1,12 @@
-.LastCardButton{
+.ScoreButton{
     width: 50%;
-    height: 45px;
 }
 
 .ScoreButton button{
     background: #000;
     border: solid 2px #F5D715;
-    font-size: 15px;
+    font-size: 1.5vh;
     color: #F5D715;
     width: 100%;
-    height: 5vh;
+    height: 4.5vh;
 }

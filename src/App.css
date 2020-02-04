@@ -4,7 +4,7 @@
 
 p{
   margin: 0;
-  font-size: 20px;
+  font-size: 2vh;
 }
 
 header{
@@ -12,7 +12,7 @@ header{
   border-bottom: #F5D715 2px solid;
   border-left: #F5D715 2px solid;
   border-right: #F5D715 2px solid;
-  padding: 5px;
+  padding: 1vh;
 }
 
 h1{
