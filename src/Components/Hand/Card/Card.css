@@ -2,19 +2,20 @@ img{
     position: absolute;
     top: 4px;
     left: 0px;
+    width: 100%;
 }
 .Card{
     background: #16ad06;
     position: relative;
     color: #fff;
-    height: 188px;
-    width: 132px;
-    margin: 10px;
+    height: 17vh;
+    width: 6vw;
+    margin: 2vh 2vh;
     border: solid 2px #10d7ee;
 }
 
 .Nom{
-    font-size: 14px;
+    font-size: 12px;
     position: absolute;
     top: 5px;
     left: 5px;
@@ -22,8 +23,8 @@ img{
 
 .Chiffre{
     position: absolute;
-    bottom: 5px;
-    left: 55px;
-    font-size: 35px;
+    bottom: 3px;
+    left: 50px;
+    font-size: 25px;
 }
     
