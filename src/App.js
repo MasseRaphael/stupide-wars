@@ -4,6 +4,7 @@ import PointsCard from './Components/PointCard/PointsCard';
 import Hand from './Components/Hand/Hand';
 import NextButton from './Components/NextButton/NextButton';
 import ButtonsBottom from './Components/ButtonsBottom/ButtonsBottom';
+import Start from './star-wars-universe-image.jpg';
 
 export default class App extends React.Component {
   constructor(){
@@ -37,30 +38,52 @@ export default class App extends React.Component {
     })
   }
   render(){
-    return (
-      <div className="App">
-  
-        <div className="layout">
-        
-          <header>
-  
-            <h1>Stupide<br/>
-              Wars</h1>
-  
-          </header>
-  
-          <PointsCard/>
-  
-          <Hand/>
-  
-          <NextButton onClick tabCarteJoueur={this.state.currentPlayer}/>
-  
-          <ButtonsBottom/>
-  
+    if(this.state.currentPlayer === 0){
+      return (
+        <div className="App">
+    
+          <div className="layout">
+          
+            <header>
+    
+              <h1>Stupide<br/>
+                Wars</h1>
+    
+            </header>
+    
+            <button>Commencer la partie</button>
+    
+          </div>
+    
         </div>
-  
-      </div>
-    );  
+      );
+
+    }else{
+      return (
+        <div className="App">
+    
+          <div className="layout">
+          
+            <header>
+    
+              <h1>Stupide<br/>
+                Wars</h1>
+    
+            </header>
+    
+            <PointsCard/>
+    
+            <Hand/>
+    
+            <NextButton/>
+    
+            <ButtonsBottom/>
+    
+          </div>
+    
+        </div>
+      );  
+    }
   }
   
 }
