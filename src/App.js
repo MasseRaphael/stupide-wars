@@ -51,7 +51,7 @@ export default class App extends React.Component {
     
             </header>
     
-            <button>Commencer la partie</button>
+            <button onClick={this.startGame}className="start">Commencer la partie</button>
     
           </div>
     
