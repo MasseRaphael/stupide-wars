@@ -12,7 +12,7 @@ export default class Card extends React.Component {
             <div className="Card">
                 <p className="Nom">Stormtrooper</p>
                 <img src={Carte}></img>
-                <p className="Chiffre">5</p>
+                <p className="Chiffre">{this.props.value}</p>
             </div>
         )
     }
