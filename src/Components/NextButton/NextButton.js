@@ -9,7 +9,7 @@ export default class NextButton extends React.Component {
     render(){
         return(
             <div className="NextButton">
-                <button onClick={this.props.onClick}>Joueur<br/>Suivant</button>
+                <button onClick={this.props.onClick}>Joueur Suivant</button>
             </div>
         )
     }

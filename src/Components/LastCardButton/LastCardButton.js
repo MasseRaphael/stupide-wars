@@ -9,7 +9,7 @@ export default class LastCardButton extends React.Component {
     render(){
         return(
             <div className="LastCardButton">
-                <button>Dernière Cartes<br/>Jouées</button>
+                <button>Dernière Cartes Jouées</button>
             </div>
         )
     }

@@ -27,7 +27,7 @@ h1{
 
 .layout{
   min-width: 0px;
-  max-width: 400px;
+  
   text-align: center;
   margin: 0 auto;
   height: 100vh;
@@ -45,14 +45,13 @@ h1{
 }
 
 .Hand{
-  display: inline-flex;
-  margin: 2vh 0;
+  display: inline;
+  margin: 0;
 }
 
 .BottomButton{
   display: flex;
   position: absolute;
   bottom: 0;
-  max-width: 400px;
   width: 100%;
 }
