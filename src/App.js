@@ -5,6 +5,7 @@ import NextButton from './Components/NextButton/NextButton';
 import LastCardButton from './Components/LastCardButton/LastCardButton';
 import ScoreButton from './Components/ScoreButton/ScoreButton';
 import Card from './Components/Card/Card';
+import Carousel from 'react-bootstrap/Carousel';
 
 export default class App extends React.Component {
   constructor(){
