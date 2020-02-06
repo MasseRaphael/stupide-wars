@@ -19,6 +19,7 @@ h1{
   margin: 0 auto;
   font-family: 'SF Distant Galaxy Outline';
   color: #F5D715;
+  
 }
 
 .App {
@@ -26,13 +27,11 @@ h1{
 }
 
 .layout{
-  min-width: 0px;
-  
+  min-width: 0px;  
   text-align: center;
   margin: 0 auto;
   height: 100vh;
   background-image: url("./star-wars-stars-background-3.jpg");
-  overflow: hidden;
 }
 
 .start{
