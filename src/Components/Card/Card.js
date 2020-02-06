@@ -9,7 +9,7 @@ export default class Card extends React.Component {
 
     render(){
         return(
-            <button className="Card"style={{backgroundColor:this.props.style}} onClick={this.props.onClick}>
+            <button className="Card" value={this.props.value} style={{backgroundColor:this.props.style}} onClick={e => alert(e.target.value)}>
                 <p className="Nom">Stormtrooper</p>
                 <img src={Carte}></img>
                 <p className="Chiffre">{this.props.value}</p>

@@ -144,7 +144,7 @@ export default class App extends React.Component {
                 
                 {
             player.map((card) => {
-              return <Card value={card.value} style={backgroundColor} onClick={this.playCard}/>
+              return <Card value={card.value} style={backgroundColor}/>
             })
           }
                 
