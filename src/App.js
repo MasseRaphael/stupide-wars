@@ -36,7 +36,16 @@ export default class App extends React.Component {
       player3: _player3,
 
       currentPlayer: 1
-    })
+    });
+
+    this.printPointCard();
+  }
+
+  printPointCard = () => {
+
+    let cardPoint = this.state.bonusMalusCards[Math.floor(Math.random() * this.state.bonusMalusCards.length)];
+    console.log(cardPoint);
+
   }
 
   next = () => {
