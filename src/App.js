@@ -20,6 +20,7 @@ export default class App extends React.Component {
       scoreP1: 0,
       scoreP2: 0,
       scoreP3: 0,
+      tabCardPlayed: [null],
     }
   }
 
@@ -59,21 +60,37 @@ export default class App extends React.Component {
   next = () => {
     //changer de joueur
     let nextPlayer;
+    let i = this.state.currentPlayer - 1;
+    //console.log(i)
+    //console.log(this.state.tabCardPlayed[i])
+
+    while(this.state.tabCardPlayed[i] === null){
+      alert('Veuillez Choisir une Carte!');
+      return;
+    }
 
     if(this.state.currentPlayer === 3){
       nextPlayer = 1;
 
   } else {
+    
+
     nextPlayer = this.state.currentPlayer + 1;
+    
   }
 
     this.setState({currentPlayer: nextPlayer});
-console.log(nextPlayer);
+//console.log(nextPlayer);
   }
 
   scorePanel = () => {
 
     alert('le score du joueur 1 est de ' + this.state.scoreP1 + ', le score du joueur 2 est de ' + this.state.scoreP2 + ', le score du joueur 3 est de ' + this.state.scoreP3)
+  }
+
+  playCard = () =>{
+
+    
   }
 
   render(){
