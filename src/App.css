@@ -43,3 +43,8 @@ h1{
     padding: 1vh;
     margin: 3vh;
 }
+
+.Hand{
+  display: inline-flex;
+  margin: 2vh 0;
+}

@@ -4,7 +4,7 @@ import PointsCard from './Components/PointCard/PointsCard';
 import Hand from './Components/Hand/Hand';
 import NextButton from './Components/NextButton/NextButton';
 import ButtonsBottom from './Components/ButtonsBottom/ButtonsBottom';
-import Start from './star-wars-universe-image.jpg';
+import Card from './Components/Card/Card';
 
 export default class App extends React.Component {
   constructor(){
@@ -38,6 +38,11 @@ export default class App extends React.Component {
     })
   }
   render(){
+
+    let cards = [
+      {value : this.state.player1.values},
+    ]
+
     if(this.state.currentPlayer === 0){
       return (
         <div className="App">
@@ -73,7 +78,16 @@ export default class App extends React.Component {
     
             <PointsCard/>
     
-            <Hand/>
+            
+            <div className="Hand">
+                
+                {
+            this.state.player1.map((card) => {
+              return <Card value={card.value}/>
+            })
+          }
+                
+            </div>
     
             <NextButton/>
     
