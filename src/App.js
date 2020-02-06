@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import PointsCard from './Components/PointCard/PointsCard';
-import Hand from './Components/Hand/Hand';
+
 import NextButton from './Components/NextButton/NextButton';
 import ButtonsBottom from './Components/ButtonsBottom/ButtonsBottom';
 import Card from './Components/Card/Card';
@@ -12,19 +12,19 @@ export default class App extends React.Component {
 
     this.state = {
       currentPlayer: 0,
-      player1:[],
-      player2:[],
-      player3:[],
+      player1:{},
+      player2:{},
+      player3:{},
     }
   }
 
   startGame = () => {
     // génération main joueur 1
-    let _player1 = [{value: 1}, {value: 2}, {value: 3},{value : 4},{value : 5},{value : 6},{value : 7},{value : 8},{value : 9},{value : 10},{value : 11},{value : 12},{value : 13},{value : 14},{value : 15},{color : '#16ad06'}]
+    let _player1 = {card:[{value: 1}, {value: 2}, {value: 3},{value : 4},{value : 5},{value : 6},{value : 7},{value : 8},{value : 9},{value : 10},{value : 11},{value : 12},{value : 13},{value : 14},{value : 15}],background : 'background-color:#16ad06'}
     // génération main joueur 2
-    let _player2 = [{value: 1}, {value: 2}, {value: 3},{value : 4},{value : 5},{value : 6},{value : 7},{value : 8},{value : 9},{value : 10},{value : 11},{value : 12},{value : 13},{value : 14},{value : 15},{color : '#ddb118'}]
+    let _player2 = {card:[{value:5}, {value: 8}, {value: 3},{value : 4},{value : 5},{value : 6},{value : 7},{value : 8},{value : 9},{value : 10},{value : 11},{value : 12},{value : 13},{value : 14},{value : 15}],background : 'background-color:#ddb118'}
     // génération main joueur 3
-    let _player3 = [{value: 1}, {value: 2}, {value: 3},{value : 4},{value : 5},{value : 6},{value : 7},{value : 8},{value : 9},{value : 10},{value : 11},{value : 12},{value : 13},{value : 14},{value : 15},{color : '#18b6dd'}]
+    let _player3 = {card:[{value:6}, {value:4}, {value: 3},{value : 4},{value : 5},{value : 6},{value : 7},{value : 8},{value : 9},{value : 10},{value : 11},{value : 12},{value : 13},{value : 14},{value : 15}],background : 'background-color:#18b6dd'}
 
     this.setState({
 
@@ -37,11 +37,23 @@ export default class App extends React.Component {
       currentPlayer: 1
     })
   }
-  render(){
 
-    let cards = [
-      {value : this.state.player1.values},
-    ]
+  next = () => {
+    //changer de joueur
+    let nextPlayer;
+
+    if(this.state.currentPlayer === 3){
+      nextPlayer = 1;
+
+  } else {
+    nextPlayer = this.state.currentPlayer + 1;
+  }
+
+    this.setState({currentPlayer: nextPlayer});
+console.log(nextPlayer);
+  }
+
+  render(){
 
     if(this.state.currentPlayer === 0){
       return (
@@ -56,7 +68,7 @@ export default class App extends React.Component {
     
             </header>
     
-            <button onClick={this.startGame}className="start">Commencer la partie</button>
+            <button onClick={this.startGame} className="start">Commencer la partie</button>
     
           </div>
     
@@ -64,6 +76,10 @@ export default class App extends React.Component {
       );
 
     }else{
+      let strPlayer = "player" + this.state.currentPlayer;
+      let player = this.state[strPlayer].card;
+      let backgroundColor = this.state[strPlayer].background;
+
       return (
         <div className="App">
     
@@ -82,14 +98,14 @@ export default class App extends React.Component {
             <div className="Hand">
                 
                 {
-            this.state.player1.map((card) => {
-              return <Card value={card.value}/>
+            player.map((card) => {
+              return <Card value={card.value} style={backgroundColor}/>
             })
           }
                 
             </div>
     
-            <NextButton/>
+            <NextButton onClick={this.next}/>
     
             <ButtonsBottom/>
     
