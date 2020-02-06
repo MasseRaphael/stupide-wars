@@ -21,7 +21,13 @@ export default class App extends React.Component {
       scoreP2: 0,
       scoreP3: 0,
       tabCardPlayed: [],
-    }
+    };
+
+    this.handleClick =this.handleClick.bind(this);
+  }
+
+  handleClick(e){
+    alert(e.target.value)
   }
 
   startGame = () => {
@@ -86,12 +92,6 @@ export default class App extends React.Component {
     alert('le score du joueur 1 est de ' + this.state.scoreP1 + ', le score du joueur 2 est de ' + this.state.scoreP2 + ', le score du joueur 3 est de ' + this.state.scoreP3)
   }
 
-  playCard = () =>{
-
-    
-    console.log(this.state.tabCardPlayed)
-  }
-
   render(){
 
     if(this.state.currentPlayer === 0){
@@ -138,7 +138,7 @@ export default class App extends React.Component {
                 
                 {
             player.map((card) => {
-              return <Card value={card.value} style={backgroundColor} onClick={this.playCard}/>
+              return <Card value={card.value} style={backgroundColor} onClick={this.handleClick}/>
             })
           }
                 
