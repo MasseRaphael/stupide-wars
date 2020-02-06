@@ -20,7 +20,7 @@ export default class App extends React.Component {
       scoreP1: 0,
       scoreP2: 0,
       scoreP3: 0,
-      tabCardPlayed: [null],
+      tabCardPlayed: [],
     }
   }
 
@@ -60,11 +60,9 @@ export default class App extends React.Component {
   next = () => {
     //changer de joueur
     let nextPlayer;
-    let i = this.state.currentPlayer - 1;
-    //console.log(i)
-    //console.log(this.state.tabCardPlayed[i])
+    
 
-    while(this.state.tabCardPlayed[i] === null){
+    while(this.state.tabCardPlayed.length !== this.state.currentPlayer ){
       alert('Veuillez Choisir une Carte!');
       return;
     }
@@ -91,6 +89,7 @@ export default class App extends React.Component {
   playCard = () =>{
 
     
+    console.log(this.state.tabCardPlayed)
   }
 
   render(){
@@ -139,7 +138,7 @@ export default class App extends React.Component {
                 
                 {
             player.map((card) => {
-              return <Card value={card.value} style={backgroundColor}/>
+              return <Card value={card.value} style={backgroundColor} onClick={this.playCard}/>
             })
           }
                 
