@@ -9,7 +9,7 @@ export default class ScoreButton extends React.Component {
     render(){
         return(
             <div className="LastCardButton">
-                <button>Score</button>
+                <button onClick={this.props.onClick}>Score</button>
             </div>
         )
     }

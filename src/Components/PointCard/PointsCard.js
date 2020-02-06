@@ -10,11 +10,11 @@ export default class PointsCard extends React.Component {
     render(){
         return(
             <div className="PointsCard">
-                <p className="upLeft">+10</p>
-                <p className="upRight">+10</p>
+                <p className="upLeft">{this.props.value}</p>
+                <p className="upRight">{this.props.value}</p>
                 <img src={cartePoint}></img>
-                <p className="botLeft">+10</p>
-                <p className="botRight">+10</p>
+                <p className="botLeft">{this.props.value}</p>
+                <p className="botRight">{this.props.value}</p>
             </div>
         )
     }

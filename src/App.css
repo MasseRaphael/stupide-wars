@@ -48,3 +48,11 @@ h1{
   display: inline-flex;
   margin: 2vh 0;
 }
+
+.BottomButton{
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  max-width: 400px;
+  width: 100%;
+}

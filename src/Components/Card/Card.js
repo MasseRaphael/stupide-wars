@@ -9,11 +9,11 @@ export default class Card extends React.Component {
 
     render(){
         return(
-            <div className="Card"style={{backgroundColor:this.props.style}}>
+            <button className="Card"style={{backgroundColor:this.props.style}}>
                 <p className="Nom">Stormtrooper</p>
                 <img src={Carte}></img>
                 <p className="Chiffre">{this.props.value}</p>
-            </div>
+            </button>
         )
     }
 }

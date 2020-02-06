@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
 import PointsCard from './Components/PointCard/PointsCard';
-
 import NextButton from './Components/NextButton/NextButton';
-import ButtonsBottom from './Components/ButtonsBottom/ButtonsBottom';
+import LastCardButton from './Components/LastCardButton/LastCardButton';
+import ScoreButton from './Components/ScoreButton/ScoreButton';
 import Card from './Components/Card/Card';
 
 export default class App extends React.Component {
@@ -15,7 +15,11 @@ export default class App extends React.Component {
       player1:{},
       player2:{},
       player3:{},
-      bonusMalusCards:[-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8,9,10]
+      bonusMalusCards:[-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8,9,10],
+      points: {},
+      scoreP1: 0,
+      scoreP2: 0,
+      scoreP3: 0,
     }
   }
 
@@ -27,6 +31,8 @@ export default class App extends React.Component {
     // génération main joueur 3
     let _player3 = {card:[{value:1}, {value:2}, {value: 3},{value : 4},{value : 5},{value : 6},{value : 7},{value : 8},{value : 9},{value : 10},{value : 11},{value : 12},{value : 13},{value : 14},{value : 15}],background : '#18b6dd'}
 
+    this.printPointCard();
+
     this.setState({
 
       player1: _player1,
@@ -37,15 +43,17 @@ export default class App extends React.Component {
 
       currentPlayer: 1
     });
-
-    this.printPointCard();
   }
 
   printPointCard = () => {
 
     let cardPoint = this.state.bonusMalusCards[Math.floor(Math.random() * this.state.bonusMalusCards.length)];
-    console.log(cardPoint);
-
+    console.log("cardPoint",cardPoint);
+    let _points = {values: cardPoint};
+    this.setState({
+      points: _points
+    });
+    console.log(this.state.points);
   }
 
   next = () => {
@@ -61,6 +69,11 @@ export default class App extends React.Component {
 
     this.setState({currentPlayer: nextPlayer});
 console.log(nextPlayer);
+  }
+
+  scorePanel = () => {
+
+    alert('le score du joueur 1 est de ' + this.state.scoreP1 + ', le score du joueur 2 est de ' + this.state.scoreP2 + ', le score du joueur 3 est de ' + this.state.scoreP3)
   }
 
   render(){
@@ -102,7 +115,7 @@ console.log(nextPlayer);
     
             </header>
     
-            <PointsCard/>
+            <PointsCard value={this.state.points.values}/>
     
             
             <div className="Hand">
@@ -117,7 +130,10 @@ console.log(nextPlayer);
     
             <NextButton onClick={this.next}/>
     
-            <ButtonsBottom/>
+            <div className="BottomButton">
+                <LastCardButton/>
+                <ScoreButton onClick={this.scorePanel}/>
+            </div>
     
           </div>
     
