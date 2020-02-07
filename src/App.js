@@ -16,11 +16,11 @@ export default class App extends React.Component {
       player2:{},
       player3:{},
       bonusMalusCards:[-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8,9,10],
-      points: {},
-      scoreP1: 0,
-      scoreP2: 0,
-      scoreP3: 0,
+      points: 0,
+      score: [0, 0, 0],
       tabCardPlayed: [],
+      valeurActuel: 0,
+      theWinner: 0
     };
   }
 
@@ -69,7 +69,7 @@ export default class App extends React.Component {
 
     if(this.state.currentPlayer === 3){
       nextPlayer = 1;
-
+      this.winner();
   } else {
     
 
@@ -83,18 +83,73 @@ export default class App extends React.Component {
 
   scorePanel = () => {
 
-    alert('le score du joueur 1 est de ' + this.state.scoreP1 + ', le score du joueur 2 est de ' + this.state.scoreP2 + ', le score du joueur 3 est de ' + this.state.scoreP3)
+    alert('le score du joueur 1 est de ' + this.state.score[0] + ', le score du joueur 2 est de ' + this.state.score[1] + ', le score du joueur 3 est de ' + this.state.score[2])
   }
 
   playCard = (card) =>{
 
-    let newTabCardPlayed = this.state.tabCardPlayed.push(card);
+    //let newTabCardPlayed = this.state.tabCardPlayed.push(card);
 
-    this.setState({tabCardPlayed: newTabCardPlayed})
+    this.setState({tabCardPlayed: this.state.tabCardPlayed.concat(card.value)}, () => console.log(this.state.tabCardPlayed));
 
     console.log(card.value)
     console.log(this.state.tabCardPlayed)
     
+  }
+
+  nbElement = (array, value) =>{
+    let counter = 0;
+    for(let i=0;i<array.length;i++) {
+      if (parseInt(array[i]) === parseInt(value)) {counter++;}
+    }
+    console.log('counter' + counter)
+    return counter;
+  }
+  
+
+  winner = () =>{
+
+    for(let i=0; i< this.state.tabCardPlayed.length; i++){
+      let n = this.state.tabCardPlayed[i];
+      let nb = this.nbElement(this.state.tabCardPlayed, n);
+      if(nb === 1){
+        this.setState({tabCardPlayed: n})
+      }else{
+        this.setState({tabCardPlayed: 0})
+      }
+      console.log('nb' + nb)
+    }
+    console.log('bonjour' + this.state.tabCardPlayed)
+
+    for(let i=0; i <this.state.tabCardPlayed.length; i++){
+      let a = this.state.tabCardPlayed[i];
+      if(this.state.points > 0){
+        if(parseInt(a) >= parseInt(this.state.valeurActuel)){
+          this.setState({valeurActuel: parseInt(a),
+          theWinner: i})
+        }
+      }else{
+        if(parseInt(a) <= parseInt(this.state.valeurActuel)){
+          this.setState({valeurActuel: parseInt(a),
+          theWinner: i})
+        }
+      }
+    }
+    console.log('je' + this.state.theWinner)
+
+    if(this.state.tabCardPlayed.length === 0){
+      alert('relancer un tour');
+    }else{
+      alert("Le joueur gagnant est " + this.state.theWinner + " > " + this.state.valeurActuel);
+      let gagnant = this.state.theWinner;
+      let newScore = [0, 0, 0];
+      newScore[gagnant] = parseInt(newScore[gagnant]) + parseInt(this.state.points);
+      this.setState({score: newScore});
+      console.log('suis' + gagnant)
+      console.log('perdu' + newScore)
+      console.log('!' + this.state.score)
+    }
+
   }
 
   render(){
