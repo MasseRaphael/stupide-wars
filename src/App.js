@@ -5,7 +5,6 @@ import NextButton from './Components/NextButton/NextButton';
 import LastCardButton from './Components/LastCardButton/LastCardButton';
 import ScoreButton from './Components/ScoreButton/ScoreButton';
 import Card from './Components/Card/Card';
-import Carousel from 'react-bootstrap/Carousel';
 
 export default class App extends React.Component {
   constructor(){
@@ -87,16 +86,10 @@ export default class App extends React.Component {
     alert('le score du joueur 1 est de ' + this.state.scoreP1 + ', le score du joueur 2 est de ' + this.state.scoreP2 + ', le score du joueur 3 est de ' + this.state.scoreP3)
   }
 
-  playCard = () =>{
+  playCard = (card) =>{
 
-    let strPlayerCard = "player" + this.state.currentPlayer;
-    let playerCard = this.state[strPlayerCard].card.value;
-
-    let newTabCardPlayed = this.state.tabCardPlayed.push(playerCard);
-
-    this.setState({tabCardPlayed: newTabCardPlayed})
-    console.log(playerCard)
-    //console.log(this.state.tabCardPlayed)
+    console.log(card.value)
+    
   }
 
   render(){
@@ -145,7 +138,7 @@ export default class App extends React.Component {
                 
                 {
             player.map((card) => {
-              return <Card value={card.value} style={backgroundColor}/>
+              return <Card value={card.value} style={backgroundColor} onClick={() => {this.playCard(card)}}/>
             })
           }
                 
