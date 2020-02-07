@@ -16,7 +16,7 @@ export default class App extends React.Component {
       player2:{},
       player3:{},
       bonusMalusCards:[-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8,9,10],
-      points: 0,
+      points: {},
       score: [0, 0, 0],
       tabCardPlayed: [],
       valeurActuel: 0,
@@ -91,7 +91,7 @@ export default class App extends React.Component {
     //let newTabCardPlayed = this.state.tabCardPlayed.push(card);
 
     this.setState({tabCardPlayed: this.state.tabCardPlayed.concat(card.value)}, () => console.log(this.state.tabCardPlayed));
-    
+
     console.log(card.value)
     console.log(this.state.tabCardPlayed)
     
