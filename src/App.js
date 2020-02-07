@@ -91,7 +91,7 @@ export default class App extends React.Component {
     //let newTabCardPlayed = this.state.tabCardPlayed.push(card);
 
     this.setState({tabCardPlayed: this.state.tabCardPlayed.concat(card.value)}, () => console.log(this.state.tabCardPlayed));
-
+    
     console.log(card.value)
     console.log(this.state.tabCardPlayed)
     
@@ -112,14 +112,16 @@ export default class App extends React.Component {
     for(let i=0; i< this.state.tabCardPlayed.length; i++){
       let n = this.state.tabCardPlayed[i];
       let nb = this.nbElement(this.state.tabCardPlayed, n);
+      let newTab = []
       if(nb === 1){
-        this.setState({tabCardPlayed: n})
-      }else{
-        this.setState({tabCardPlayed: 0})
+        newTab = newTab.concat(n);
       }
+      this.setState({tabCardPlayed: newTab})
       console.log('nb' + nb)
+      console.log('newtab' + newTab)
     }
     console.log('bonjour' + this.state.tabCardPlayed)
+    console.log('points ' + this.state.points.va)
 
     for(let i=0; i <this.state.tabCardPlayed.length; i++){
       let a = this.state.tabCardPlayed[i];
