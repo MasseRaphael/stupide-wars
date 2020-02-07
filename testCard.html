@@ -1,0 +1,95 @@
+test 
+
+
+<script>
+function nbElement(array, value) {
+  var counter = 0;
+  for(var i=0;i<array.length;i++) {
+    if (parseInt(array[i]) === parseInt(value)) counter++;
+  }
+  return counter;
+}
+
+
+    var nbJoueur = 3;
+
+    var joueurActuel = 0;
+
+    var carte = 0;
+
+    var tabCarteJoueur = [];
+
+    var tabCarteSelectionner = [];
+    var JoueurGagnant = 0;
+    var valeurActuel = 0;
+    var scoreJoueur = [];
+    var nouveauTabCS = [];
+
+    for(var i = 0; i < nbJoueur; i++ ){
+        tabCarteJoueur[i] = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+        scoreJoueur[i] = 0;
+    }
+
+    function Jouer(){
+        //console.log(tabCarteJoueur);
+
+        var tabCarteBonus = [-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8,9,10]
+        
+        carte = tabCarteBonus[Math.floor(Math.random() * tabCarteBonus.length)];
+        //carte *= Math.floor(Math.random()*2) === 1? 1 : -1;
+
+        console.log("carte", carte);
+
+        //console.log("carte : " + carte);
+
+        for(var i = 0; i < nbJoueur; i++ ){
+            var choix = prompt("JOUEUR : " + i + " selectionner la valeur de votre carte : ");
+            tabCarteSelectionner[i] = choix;
+        }
+        
+
+        //console.log("choix des joueurs");
+        //console.table(tabCarteSelectionner);
+
+
+        //retirer les doublons 12 12 6
+        for(var i = 0; i < tabCarteSelectionner.length; i++ ){
+            var n = tabCarteSelectionner[i];
+            var nb = nbElement(tabCarteSelectionner, n);
+            if(nb == 1){
+                nouveauTabCS[i] = n;
+            }
+
+        }
+        console.log("nouveauTabCS");
+        console.table(nouveauTabCS);
+        console.log("((((((((((((((nouveauTabCS");
+
+
+        for(var i = 0; i < nouveauTabCS.length; i++ ){
+            var a = nouveauTabCS[i];
+            if(carte > 0){
+                if(parseInt(a) >= parseInt(valeurActuel)){
+                    valeurActuel = parseInt(a);
+                    JoueurGagnant = i;
+                }
+            }else{
+                if(parseInt(a) <= parseInt(valeurActuel)){
+                    valeurActuel = parseInt(a);
+                    JoueurGagnant = i;
+                }}
+        }
+
+        if(nouveauTabCS.length == 0){
+            console.log("relancer un tour");
+        }else{
+            console.log("joueur gagnant = " + JoueurGagnant + " > " + valeurActuel);
+            scoreJoueur[JoueurGagnant] = parseInt(scoreJoueur[JoueurGagnant]) + parseInt(carte);
+        }
+
+        //console.log("# SCORE");
+       console.table(scoreJoueur);
+    }
+
+
+</script>
