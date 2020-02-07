@@ -61,11 +61,11 @@ export default class App extends React.Component {
     //changer de joueur
     let nextPlayer;
     
-
-    while(this.state.tabCardPlayed.length !== this.state.currentPlayer ){
-      alert('Veuillez Choisir une Carte!');
-      return;
-    }
+    //passer en commentaire car disfonctionnel
+    //while(this.state.tabCardPlayed.length !== this.state.currentPlayer ){
+    //  alert('Veuillez Choisir une Carte!');
+    //  return;
+    //}
 
     if(this.state.currentPlayer === 3){
       nextPlayer = 1;
@@ -78,7 +78,7 @@ export default class App extends React.Component {
   }
 
     this.setState({currentPlayer: nextPlayer});
-//console.log(nextPlayer);
+
   }
 
   scorePanel = () => {
@@ -88,7 +88,12 @@ export default class App extends React.Component {
 
   playCard = (card) =>{
 
+    let newTabCardPlayed = this.state.tabCardPlayed.push(card);
+
+    this.setState({tabCardPlayed: newTabCardPlayed})
+
     console.log(card.value)
+    console.log(this.state.tabCardPlayed)
     
   }
 
