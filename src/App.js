@@ -16,7 +16,7 @@ export default class App extends React.Component {
       player2:{},
       player3:{},
       bonusMalusCards:[-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8,9,10],
-      points: {},
+      points:{},
       score: [0, 0, 0],
       tabCardPlayed: [],
       valeurActuel: 0,
@@ -49,12 +49,15 @@ export default class App extends React.Component {
   printPointCard = () => {
 
     let cardPoint = this.state.bonusMalusCards[Math.floor(Math.random() * this.state.bonusMalusCards.length)];
-    console.log("cardPoint",cardPoint);
-    let _points = {values: cardPoint};
+    console.log("cardPoint: ",cardPoint);
+    let _points = {value: cardPoint};
+    console.log("_points: " + _points.value)
     this.setState({
+
       points: _points
+
     });
-    console.log(this.state.points);
+    console.log(this.state.points.value);
   }
 
   next = () => {
@@ -193,7 +196,7 @@ export default class App extends React.Component {
     
             </header>
     
-            <PointsCard value={this.state.points.values}/>
+            <PointsCard value={this.state.points.value}/>
     
             
             <div className="Hand">
