@@ -76,7 +76,7 @@ export default class App extends React.Component {
       this.winner();
       //this.deleteBonusMalus();
       this.printPointCard();
-      console.log(this.state.bonusMalusCards)
+      //console.log(this.state.bonusMalusCards)
   } else {
     
 
@@ -108,7 +108,7 @@ export default class App extends React.Component {
     for(let i=0;i<array.length;i++) {
       if (parseInt(array[i]) === parseInt(value)) {counter++;}
     }
-    console.log('counter' + counter)
+    //console.log('counter' + counter)
     return counter;
   }
   
@@ -123,8 +123,8 @@ export default class App extends React.Component {
         newTab = newTab.concat(n);
       }
       this.setState({tabCardPlayed: newTab})
-      console.log('nb' + nb)
-      console.log('newtab' + newTab)
+      //console.log('nb' + nb)
+      //console.log('newtab' + newTab)
     }
     console.log('bonjour' + this.state.tabCardPlayed)
     console.log('points ' + this.state.points.value)
