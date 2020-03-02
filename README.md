@@ -13,3 +13,6 @@ projet etudiant de création d'application adapté du jeu stupide vautour avec l
  - intégration système pour garder en mémoires les dernière cartes jouées
  - intégration calcul du gagnant final
  - choix nombre de joueur
+
+ Raison bug:
+ - il semblerait que la state points se réinitialise après création de la carte
