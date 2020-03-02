@@ -65,7 +65,7 @@ export default class App extends React.Component {
     //changer de joueur
     let nextPlayer;
     
-    //passer en commentaire car disfonctionnel
+    
     while(this.state.tabCardPlayed.length !== this.state.currentPlayer ){
       alert('Veuillez Choisir une Carte!');
       return;
