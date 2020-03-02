@@ -14,5 +14,5 @@ projet etudiant de création d'application adapté du jeu stupide vautour avec l
  - intégration calcul du gagnant final
  - choix nombre de joueur
 
- Raison bug:
- - il semblerait que la state points se réinitialise après création de la carte
+En réfléxion pour un remaniement structurel
+
