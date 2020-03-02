@@ -16,7 +16,7 @@ export default class App extends React.Component {
       player2:{},
       player3:{},
       bonusMalusCards:[-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8,9,10],
-      points:{},
+      points:{value: 0},
       score: [0, 0, 0],
       tabCardPlayed: [],
       valeurActuel: 0,
@@ -74,6 +74,9 @@ export default class App extends React.Component {
     if(this.state.currentPlayer === 3){
       nextPlayer = 1;
       this.winner();
+      this.deleteBonusMalus();
+      this.printPointCard();
+      console.log(this.state.bonusMalusCards)
   } else {
     
 
@@ -93,6 +96,7 @@ export default class App extends React.Component {
   playCard = (card) =>{
 
     this.setState({tabCardPlayed: this.state.tabCardPlayed.concat(card.value)}, () => console.log(this.state.tabCardPlayed));
+    this.deleteCards()
 
     console.log(card.value)
     console.log(this.state.tabCardPlayed)
@@ -147,12 +151,36 @@ export default class App extends React.Component {
       alert("Le joueur gagnant est " + this.state.theWinner + " > " + this.state.valeurActuel);
       let gagnant = this.state.theWinner;
       let newScore = [0, 0, 0];
-      newScore[gagnant] = parseInt(newScore[gagnant]) + parseInt(this.state.points);
+      newScore[gagnant] = parseInt(newScore[gagnant]) + parseInt(this.state.points.value);
       this.setState({score: newScore});
       console.log('suis' + gagnant)
       console.log('perdu' + newScore)
       console.log('!' + this.state.score)
     }
+
+  }
+
+  deleteBonusMalus = () =>{
+    let deckBM = this.state.bonusMalusCards;
+    let newDeckBM = deckBM.filter(() => {
+      return this.state.points.value !== this.state.bonusMalusCards
+    });
+
+    this.setState({bonusMalusCards: newDeckBM});
+  }
+
+  deleteCards = (cardNumber) =>{
+    let strPlayer = "player" + this.state.currentPlayer;
+    console.log("strPlayer: " + strPlayer);
+    let _deck = this.state[strPlayer];
+    console.log("_deck: " + _deck);
+
+    let newDeck = _deck.filter((card) => {
+      return card.value !== cardNumber;
+    })
+    console.log("newDeck: " + newDeck);
+
+    this.setState({[strPlayer]: newDeck})
 
   }
 
