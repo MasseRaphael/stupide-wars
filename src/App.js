@@ -42,7 +42,8 @@ export default class App extends React.Component {
 
       player3: _player3,
 
-      currentPlayer: 1
+      currentPlayer: 1,
+
     });
   }
 
@@ -54,10 +55,10 @@ export default class App extends React.Component {
     console.log("_points: " + _points.value)
     this.setState({
 
-      points: _points
+      points: _points,
 
     });
-    console.log(this.state.points.value);
+    console.log("points: " + this.state.points.value);
   }
 
   next = () => {
@@ -65,10 +66,10 @@ export default class App extends React.Component {
     let nextPlayer;
     
     //passer en commentaire car disfonctionnel
-    //while(this.state.tabCardPlayed.length !== this.state.currentPlayer ){
-    //  alert('Veuillez Choisir une Carte!');
-    //  return;
-    //}
+    while(this.state.tabCardPlayed.length !== this.state.currentPlayer ){
+      alert('Veuillez Choisir une Carte!');
+      return;
+    };
 
     if(this.state.currentPlayer === 3){
       nextPlayer = 1;
@@ -90,8 +91,6 @@ export default class App extends React.Component {
   }
 
   playCard = (card) =>{
-
-    //let newTabCardPlayed = this.state.tabCardPlayed.push(card);
 
     this.setState({tabCardPlayed: this.state.tabCardPlayed.concat(card.value)}, () => console.log(this.state.tabCardPlayed));
 
@@ -124,11 +123,11 @@ export default class App extends React.Component {
       console.log('newtab' + newTab)
     }
     console.log('bonjour' + this.state.tabCardPlayed)
-    console.log('points ' + this.state.points.va)
+    console.log('points ' + this.state.points.value)
 
     for(let i=0; i <this.state.tabCardPlayed.length; i++){
       let a = this.state.tabCardPlayed[i];
-      if(this.state.points > 0){
+      if(this.state.points.value > 0){
         if(parseInt(a) >= parseInt(this.state.valeurActuel)){
           this.setState({valeurActuel: parseInt(a),
           theWinner: i})
