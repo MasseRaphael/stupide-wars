@@ -74,7 +74,7 @@ export default class App extends React.Component {
     if(this.state.currentPlayer === 3){
       nextPlayer = 1;
       this.winner();
-      this.deleteBonusMalus();
+      //this.deleteBonusMalus();
       this.printPointCard();
       console.log(this.state.bonusMalusCards)
   } else {
@@ -96,7 +96,7 @@ export default class App extends React.Component {
   playCard = (card) =>{
 
     this.setState({tabCardPlayed: this.state.tabCardPlayed.concat(card.value)}, () => console.log(this.state.tabCardPlayed));
-    this.deleteCards()
+    //this.deleteCards()
 
     console.log(card.value)
     console.log(this.state.tabCardPlayed)
